@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zuzka & Valerio</title>
+  <meta
+    name="description"
+    content="Wedding website of Zuzka and Valerio – schedule, travel, wedding party, tips and FAQ."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand">Z&amp;V</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#home" class="nav-link active" data-i18n="nav.home">Home</a>
+        <a href="#schedule" class="nav-link" data-i18n="nav.schedule">Schedule</a>
+        <a href="#travel" class="nav-link" data-i18n="nav.travel">Travel</a>
+        <a href="#party" class="nav-link" data-i18n="nav.party">Wedding Party</a>
+        <a href="#todo" class="nav-link" data-i18n="nav.todo">Things to Do</a>
+        <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQs</a>
+      </nav>
+
+      <div class="lang-switch">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="sk">SK</button>
+        <button type="button" data-lang="it">IT</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="container">
+        <div class="hero-card">
+          <p class="eyebrow" data-i18n="hero.eyebrow">We’re getting married</p>
+          <h1 class="names">Zuzka &amp; Valerio</h1>
+
+          <div class="date-row" aria-label="Wedding date">
+            <span>9</span>
+            <span class="divider">|</span>
+            <span>19</span>
+            <span class="divider">|</span>
+            <span>2026</span>
+          </div>
+
+          <p class="location" data-i18n="hero.location">Rimini, Italy</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ornament-section">
+      <div class="ornament-line">
+        <span class="ornament-circle"></span>
+      </div>
+    </section>
+
+    <section id="schedule" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="schedule.title">Schedule</h2>
+        <div class="grid two-cols">
+          <article class="info-card">
+            <h3 data-i18n="schedule.ceremonyTitle">Ceremony</h3>
+            <p><strong>14:30</strong></p>
+            <p>Tempio Malatestiano</p>
+            <p>Via IV Novembre, Rimini</p>
+          </article>
+
+          <article class="info-card">
+            <h3 data-i18n="schedule.receptionTitle">Reception</h3>
+            <p><strong>17:30</strong></p>
+            <p>Villa des Roses</p>
+            <p data-i18n="schedule.receptionText">Dinner, speeches and dancing</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="travel" class="section alt-bg">
+      <div class="container">
+        <h2 class="section-title" data-i18n="travel.title">Travel</h2>
+        <p class="travel-intro" data-i18n="travel.intro">
+          A few travel notes to make your stay easy, relaxed, and enjoyable.
+        </p>
+
+        <div class="grid two-cols">
+          <article class="info-card">
+            <h3 data-i18n="travel.airportTitle">Airport</h3>
+            <p data-i18n="travel.airportText">
+              For those traveling by air, the nearest airports are:
+            </p>
+            <ul>
+              <li>Rimini</li>
+              <li>Bologna</li>
+              <li>Ancona</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <h3 data-i18n="travel.accommodationTitle">Accommodation</h3>
+            <p data-i18n="travel.accommodationText1">
+              For a comfortable stay, we suggest choosing accommodation either in the city center or near the venue.
+            </p>
+            <p data-i18n="travel.accommodationText2">
+              We will add a few hotel suggestions and helpful booking links here soon.
+            </p>
+          </article>
+        </div>
+
+        <section class="travel-weather">
+          <h3 class="travel-weather-title" data-i18n="travel.weatherTitle">Expected Weather</h3>
+          <p class="travel-weather-intro" data-i18n="travel.weatherIntro">
+            You can expect warm late-summer days, plenty of sunshine, and mild evenings.
+          </p>
+
+          <div class="weather-grid">
+            <div class="day-card">
+              <div class="day-number">17.9</div>
+              <div class="weather-icon">⛅</div>
+              <div class="weather-temp">26°</div>
+              <div class="weather-text" data-i18n="travel.weatherDay1">Partly cloudy</div>
+            </div>
+
+            <div class="day-card">
+              <div class="day-number">18.9</div>
+              <div class="weather-icon">☀</div>
+              <div class="weather-temp">26°</div>
+              <div class="weather-text" data-i18n="travel.weatherDay2">Sunny</div>
+            </div>
+
+            <div class="day-card">
+              <div class="day-number">19.9</div>
+              <div class="weather-icon">☀</div>
+              <div class="weather-temp">26°</div>
+              <div class="weather-text" data-i18n="travel.weatherDay3">Sunny</div>
+            </div>
+
+            <div class="day-card">
+              <div class="day-number">20.9</div>
+              <div class="weather-icon">☀</div>
+              <div class="weather-temp">26°</div>
+              <div class="weather-text" data-i18n="travel.weatherDay4">Sunny</div>
+            </div>
+          </div>
+        </section>
+
+        <div class="travel-extra">
+          <div class="info-card travel-extra-card">
+            <h3 data-i18n="travel.packTitle">What to Pack</h3>
+            <p data-i18n="travel.packText">
+              We recommend bringing light clothing for warm days, something elegant for the celebration, comfortable shoes, and a light layer for the evening.
+            </p>
+          </div>
+
+          <div class="info-card travel-extra-card">
+            <h3 data-i18n="travel.arrivalTitle">Arrival Tip</h3>
+            <p data-i18n="travel.arrivalText">
+              If possible, we recommend arriving at least one day before the wedding so you can settle in and enjoy the weekend with us.
+            </p>
+          </div>
+        </div>
+
+        <p class="travel-closing" data-i18n="travel.closing">
+          We look forward to welcoming you there.
+        </p>
+      </div>
+    </section>
+
+    <section id="party" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="party.title">Wedding Party</h2>
+        <div class="grid three-cols">
+          <article class="info-card center">
+            <h3 data-i18n="party.maidOfHonor">Maid of Honor</h3>
+            <p>Emma</p>
+          </article>
+          <article class="info-card center">
+            <h3 data-i18n="party.bestMan">Best Man</h3>
+            <p>Luca</p>
+          </article>
+          <article class="info-card center">
+            <h3 data-i18n="party.groupTitle">Bridesmaids &amp; Groomsmen</h3>
+            <p data-i18n="party.groupText">Add your names here</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="todo" class="section alt-bg">
+      <div class="container">
+        <h2 class="section-title" data-i18n="todo.title">Things to Do</h2>
+
+        <p class="section-intro" data-i18n="todo.intro">
+          We chose Rimini not only for our wedding, but also for its atmosphere.
+          Here are a few places and experiences we think you’ll love.
+        </p>
+
+        <div class="grid three-cols">
+          <article class="info-card">
+            <h3 data-i18n="todo.centerTitle">Historic Center</h3>
+            <p data-i18n="todo.centerText">
+              Walk through the old town, visit Arco di Augusto and Ponte di Tiberio.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 data-i18n="todo.beachTitle">Beach & Sunset</h3>
+            <p data-i18n="todo.beachText">
+              Enjoy long sandy beaches and beautiful sunsets by the sea.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 data-i18n="todo.foodTitle">Food & Aperitivo</h3>
+            <p data-i18n="todo.foodText">
+              Try local pasta, seafood and don’t miss an evening aperitivo.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 data-i18n="todo.gelatoTitle">Gelato Stops</h3>
+            <p data-i18n="todo.gelatoText">
+              Take a break with authentic Italian gelato around the city.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 data-i18n="todo.sanmarinoTitle">San Marino Trip</h3>
+            <p data-i18n="todo.sanmarinoText">
+              A short trip to San Marino offers stunning views and a unique atmosphere.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 data-i18n="todo.relaxTitle">Just Relax</h3>
+            <p data-i18n="todo.relaxText">
+              Slow down, enjoy the vibe, coffee, and time with friends and family.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="faq.title">FAQs</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary data-i18n="faq.q1">What should I wear?</summary>
+            <p data-i18n="faq.a1">
+              We would love to see everyone dressed in elegant wedding attire. Think classic, refined, and appropriate for a warm late-summer celebration.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary data-i18n="faq.q2">Will transportation be provided?</summary>
+            <p data-i18n="faq.a2">
+              Information will be shared closer to the wedding.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary data-i18n="faq.q3">Will the ceremony and reception take place at the same venue?</summary>
+            <p data-i18n="faq.a3">
+              The ceremony will take place in the church, followed by a transfer to the reception venue.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary data-i18n="faq.q4">Will the wedding be indoors or outdoors?</summary>
+            <p data-i18n="faq.a4">
+              If the weather is nice, the celebration will be held outdoors. In case of unfavorable weather, everything will take place indoors.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary data-i18n="faq.q5">Is there a dress code for the welcome dinner or other events?</summary>
+            <p data-i18n="faq.a5">
+              Details will be shared closer to the date.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary data-i18n="faq.q6">Can I take photos during the ceremony?</summary>
+            <p data-i18n="faq.a6">
+              Yes, you are welcome to take photos.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary data-i18n="faq.q7">Should we rent a car?</summary>
+            <p data-i18n="faq.a7">
+              Renting a car can be helpful, but it is not necessary.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary data-i18n="faq.q8">Will there be transportation after the celebration?</summary>
+            <p data-i18n="faq.a8">
+              Information will be shared closer to the wedding.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p data-i18n="footer.text">Zuzka &amp; Valerio · 19 September 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="intro-page-body">
+  <iframe
+    class="home-preview"
+    id="homePreview"
+    src="home.html"
+    title="Wedding website"
+  ></iframe>
+
+  <div class="romantic-wash"></div>
+  <div class="soft-glow"></div>
+
+  <div class="sparkles">
+    <span class="spark s1"></span>
+    <span class="spark s2"></span>
+    <span class="spark s3"></span>
+    <span class="spark s4"></span>
+    <span class="spark s5"></span>
+    <span class="spark s6"></span>
+  </div>
+
+
+  <div class="intro-overlay" id="introOverlay">
+    <main class="intro-wrap">
+      <div class="intro-top">
+        <p class="intro-kicker">You have mail from</p>
+        <h1 class="intro-title">Zuzka &amp; Valerio</h1>
+      </div>
+
+      <button
+        class="envelope-trigger"
+        id="openEnvelope"
+        type="button"
+        aria-label="Open invitation"
+      >
+        <div class="envelope-stage">
+          <img
+            src="images/envelope-close.png"
+            alt=""
+            class="env-img env-closed"
+            id="envClosed"
+          />
+
+          <img
+            src="images/envelope-open.png"
+            alt=""
+            class="env-img env-open"
+            id="envOpen"
+          />
+
+          <div class="env-letter" id="envLetter">
+            <div class="env-letter-inner">
+              <p class="env-letter-small">Wedding Invitation</p>
+              <h2>Zuzka &amp; Valerio</h2>
+              <p>19 September 2026</p>
+              <p>Rimini, Italy</p>
+            </div>
+          </div>
+
+          <div class="env-seal" id="envSeal">Z&amp;V</div>
+        </div>
+      </button>
+
+      <div class="intro-bottom">
+        <p class="intro-hint">Click the envelope to open</p>
+      </div>
+    </main>
+  </div>
+  
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const trigger = document.getElementById("openEnvelope");
+      const body = document.body;
+      const homePreview = document.getElementById("homePreview");
+
+      let opened = false;
+      let homeLoaded = false;
+
+      if (homePreview) {
+        homePreview.addEventListener("load", () => {
+          homeLoaded = true;
+          body.classList.add("home-loaded");
+        });
+      } else {
+        homeLoaded = true;
+        body.classList.add("home-loaded");
+      }
+
+      if (!trigger) return;
+
+      trigger.addEventListener("click", () => {
+        if (opened || !homeLoaded) return;
+        opened = true;
+
+        body.classList.add("opening");
+
+        setTimeout(() => {
+          body.classList.add("opened");
+        }, 1700);
+      });
+    });
+  </script>
+</body>
+</html>
