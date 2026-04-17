@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Journey Game</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="game-page-body">
+<header class="topbar">
+    <div class="container nav-wrap">
+        <a href="index.html" class="brand">Z&amp;V</a>
+
+        <div class="lang-switch">
+            <button type="button" data-lang="en">EN</button>
+            <button type="button" data-lang="sk">SK</button>
+            <button type="button" data-lang="it">IT</button>
+        </div>
+    </div>
+</header>
+
+<main class="game-page">
+    <section class="section">
+        <div class="container">
+            <div class="game-shell">
+                <div class="game-head">
+                    <p class="game-kicker" data-i18n="game.kicker">Interactive Wedding Journey</p>
+                    <h1 class="section-title game-main-title" data-i18n="game.title">Journey to Rimini</h1>
+                    <p class="game-subtitle" data-i18n="game.subtitle">
+                        Pack wisely, travel safely, and arrive at the wedding.
+                    </p>
+                </div>
+
+                <div class="game-progress-wrap">
+                    <div class="game-step active" id="stepIndicator1">1. Pack</div>
+                    <div class="game-step" id="stepIndicator2">2. Travel</div>
+                    <div class="game-step" id="stepIndicator3">3. Airport</div>
+                    <div class="game-step" id="stepIndicator4">4. Arrival</div>
+                </div>
+
+                <!-- Intro -->
+                <div class="game-panel" id="introScreen">
+                    <div class="game-intro-card">
+                        <label class="game-label" for="guestName" data-i18n="game.nameLabel">Your name</label>
+                        <input
+                                id="guestName"
+                                class="game-input"
+                                type="text"
+                                placeholder="Enter your name"
+                                data-i18n-placeholder="game.namePlaceholder"
+                        />
+                        <label class="game-label" for="guestCountry">Your country</label>
+                        <select id="guestCountry" class="game-input">
+                            <option value="sk">Slovakia</option>
+                            <option value="lu">Luxembourg</option>
+                            <option value="it">Italy</option>
+                        </select>
+                        <p class="game-text" data-i18n="game.introText">
+                            Before leaving for the wedding, you need to pack your suitcase.
+                        </p>
+
+                        <button class="play-btn" id="beginJourneyBtn" type="button" data-i18n="game.begin">
+                            Begin the journey
+                        </button>
+                    </div>
+                </div>
+                <div class="game-panel hidden" id="storyScreen">
+                    <div class="game-scene-card story-card">
+                        <img id="storyImage" class="game-scene-image" alt="">
+                        <p id="storyText" class="game-scene-text"></p>
+
+                        <div class="final-slide-actions">
+                            <button type="button" class="play-btn" id="storyNextBtn">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Level 1 -->
+                <div class="game-panel hidden" id="packingScreen">
+                    <div class="packing-layout">
+                        <div class="packing-side">
+                            <h2 class="game-section-title" data-i18n="game.packTitle">Pack your suitcase</h2>
+                            <p class="game-text" data-i18n="game.packText">
+                                Drag the right items into the suitcase. Be careful what you bring.
+                            </p>
+
+                            <div class="packing-items" id="packingItems"></div>
+                        </div>
+
+                        <div class="packing-side">
+                            <div class="suitcase-card">
+                                <div class="suitcase-top">
+                                    <h3 data-i18n="game.suitcase">Suitcase</h3>
+                                    <span id="suitcaseCount">0 / 8</span>
+                                </div>
+
+                                <div class="suitcase-grid" id="suitcaseGrid"></div>
+
+                                <div class="suitcase-actions">
+                                    <button class="secondary-btn" id="resetSuitcaseBtn" type="button" data-i18n="game.reset">
+                                        Reset
+                                    </button>
+                                    <button class="play-btn" id="finishPackingBtn" type="button" data-i18n="game.finishPacking">
+                                        Continue
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 2 -->
+                <div class="game-panel hidden" id="roadScreen">
+                    <div class="road-topbar">
+                        <div class="road-badge">
+                            <span data-i18n="game.progress">Progress</span>
+                            <strong id="roadProgressText">0%</strong>
+                        </div>
+                        <div class="road-badge">
+                            <span data-i18n="game.delays">Traffic hits</span>
+                            <strong id="roadHitsText">0</strong>
+                        </div>
+                    </div>
+
+                    <canvas id="roadCanvas" width="1100" height="460"></canvas>
+
+                    <p class="game-text center" data-i18n="game.roadHelp">
+                        Use ↑ and ↓ to change lanes and avoid delays on the way to the airport.
+                    </p>
+                </div>
+
+                <!-- Level 3 -->
+                <div class="game-panel hidden" id="securityScreen">
+                    <div class="security-card">
+                        <h2 class="game-section-title" data-i18n="game.securityTitle">Airport security</h2>
+                        <p class="game-text" id="securityMessage">
+                            Your suitcase is being checked.
+                        </p>
+
+                        <div class="scanner-wrap">
+                            <div class="scanner-belt">
+                                <div class="scanner-suitcase" id="scannerSuitcase">🧳</div>
+                                <div class="scanner-gate" id="scannerGate">
+                                    <div class="scanner-light" id="scannerLight"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="security-actions hidden" id="securityRetryWrap">
+                            <button class="play-btn" id="repackBtn" type="button" data-i18n="game.repack">
+                                Repack the suitcase
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final -->
+                <div class="game-panel hidden" id="finalScreen">
+                    <div class="final-scene">
+                        <div class="final-overlay">
+                            <p class="game-kicker">Rimini</p>
+                            <h2 class="final-title" data-i18n="game.finalTitle">You made it</h2>
+                            <p class="final-text" id="finalPersonalText">
+                                Welcome to Rimini.
+                            </p>
+                            <p class="final-reward" data-i18n="game.rewardText">
+                                Your prize: a dance with the newlyweds
+                            </p>
+
+                            <div class="game-win-actions">
+                                <button class="play-btn" id="downloadPrizeBtn" type="button" data-i18n="game.downloadPrize">
+                                    Download your prize
+                                </button>
+                                <a class="secondary-btn" href="index.html" data-i18n="game.backSite">Back to website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
